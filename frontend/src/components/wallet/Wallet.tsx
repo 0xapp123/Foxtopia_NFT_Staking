@@ -18,12 +18,7 @@ require('@solana/wallet-adapter-react-ui/styles.css');
 
 export default function Wallet(props: { children: any }) {
     // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-    let network: any;
-    if (NETWORK === "devnet") {
-        network = WalletAdapterNetwork.Devnet;
-    } else if (NETWORK === "mainnet-beta") {
-        network = WalletAdapterNetwork.Mainnet;
-    }
+    const  network = WalletAdapterNetwork.Mainnet;
 
     // You can also provide a custom RPC endpoint.
     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
